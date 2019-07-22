@@ -8,21 +8,43 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class ResultViewController: UIViewController {
-    var resultCount: Int = 0
+    
     var resultCollectionView: UICollectionView!
+    var text: String! = ""
+    var perPage: Int! = 0
+    var photosArray = [PhotoModel]()
+    
+    let viewModel = ResultViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.initUI()
         self.resultCollectionView.register(ResultCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: ResultCollectionViewCell.self))
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.viewModel.search(text: text, perPage: perPage) { (searchResponseModel, error) in
+            self.photosArray.removeAll()
+            if let searchResponse = searchResponseModel {
+                if let photoModel = searchResponse.photos {
+                    if let photos = photoModel.photo {
+                        for photo in photos {
+                            self.photosArray.append(photo)
+                        }
+                    }
+                }
+            }
+            self.navigationItem.title = "搜尋結果 \(self.text!)"
+            self.resultCollectionView.reloadData()
+        }
     }
     
     private func initUI() {
-        self.navigationItem.title = "搜尋結果"
-        
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumLineSpacing = 0.0
         
@@ -58,13 +80,19 @@ class ResultViewController: UIViewController {
 
 extension ResultViewController: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.resultCount
+        return self.photosArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: ResultCollectionViewCell.self), for: indexPath) as! ResultCollectionViewCell
-        cell.resultImageView.backgroundColor = .yellow
-        cell.titleLabel.text = "aaa"
+        //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
+        let farmId = self.photosArray[indexPath.row].farm
+        let serverId = self.photosArray[indexPath.row].server
+        let id = self.photosArray[indexPath.row].id
+        let secret = self.photosArray[indexPath.row].secret
+        let imageUrl = URL(string: "https://farm\(String(describing: farmId!)).staticflickr.com/\(String(describing: serverId!))/\(String(describing: id!))_\(String(describing: secret!)).jpg")
+        cell.resultImageView.kf.setImage(with: imageUrl)
+        cell.titleLabel.text = self.photosArray[indexPath.row].title
         return cell
     }
     

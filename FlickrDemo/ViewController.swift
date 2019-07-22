@@ -75,7 +75,8 @@ class ViewController: UIViewController {
         let resultViewController = ResultViewController()
         
         resultViewController.view.backgroundColor = .white
-        resultViewController.resultCount = Int(self.countTextField.text!) ?? 0
+        resultViewController.text = self.searchTextField.text!
+        resultViewController.perPage = Int(self.countTextField.text!) ?? 0
         self.navigationController?.pushViewController(resultViewController, animated: true)
     }
     
