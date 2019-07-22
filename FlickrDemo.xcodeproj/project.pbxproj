@@ -12,6 +12,8 @@
 		1A13F24222E5902B00C49654 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A13F24022E5902B00C49654 /* Main.storyboard */; };
 		1A13F24422E5902D00C49654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A13F24322E5902D00C49654 /* Assets.xcassets */; };
 		1A13F24722E5902D00C49654 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A13F24522E5902D00C49654 /* LaunchScreen.storyboard */; };
+		1AEC1F9922E5DAAF00E48904 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEC1F9822E5DAAF00E48904 /* ResultViewController.swift */; };
+		1AEC1F9B22E5F7CA00E48904 /* ResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AEC1F9A22E5F7CA00E48904 /* ResultCollectionViewCell.swift */; };
 		A421BE1AF866DD39CBC8BF35 /* Pods_FlickrDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DCD93C027263181393D4F20 /* Pods_FlickrDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +25,8 @@
 		1A13F24322E5902D00C49654 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A13F24622E5902D00C49654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1A13F24822E5902D00C49654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AEC1F9822E5DAAF00E48904 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		1AEC1F9A22E5F7CA00E48904 /* ResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCollectionViewCell.swift; sourceTree = "<group>"; };
 		322EC2EB633BF93E87ADBCE7 /* Pods-FlickrDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrDemo.release.xcconfig"; path = "Target Support Files/Pods-FlickrDemo/Pods-FlickrDemo.release.xcconfig"; sourceTree = "<group>"; };
 		6DCD93C027263181393D4F20 /* Pods_FlickrDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickrDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD42E1DC8B3BBAA973B0D809 /* Pods-FlickrDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickrDemo.debug.xcconfig"; path = "Target Support Files/Pods-FlickrDemo/Pods-FlickrDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 			children = (
 				1A13F23C22E5902B00C49654 /* AppDelegate.swift */,
 				1A13F23E22E5902B00C49654 /* ViewController.swift */,
+				1AEC1F9822E5DAAF00E48904 /* ResultViewController.swift */,
+				1AEC1F9A22E5F7CA00E48904 /* ResultCollectionViewCell.swift */,
 				1A13F24022E5902B00C49654 /* Main.storyboard */,
 				1A13F24322E5902D00C49654 /* Assets.xcassets */,
 				1A13F24522E5902D00C49654 /* LaunchScreen.storyboard */,
@@ -205,6 +211,8 @@
 			files = (
 				1A13F23F22E5902B00C49654 /* ViewController.swift in Sources */,
 				1A13F23D22E5902B00C49654 /* AppDelegate.swift in Sources */,
+				1AEC1F9922E5DAAF00E48904 /* ResultViewController.swift in Sources */,
+				1AEC1F9B22E5F7CA00E48904 /* ResultCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
