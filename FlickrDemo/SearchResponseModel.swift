@@ -49,6 +49,14 @@ class PhotoModel: NSObject,Mappable {
         
     }
     
+    init(farm: Int?, secret: String?, id: String, server: String?, title: String?) {
+        self.farm = farm
+        self.secret = secret
+        self.id = id
+        self.server = server
+        self.title = title
+    }
+    
     func mapping(map: Map) {
         farm <- map["farm"]
         secret <- map["secret"]

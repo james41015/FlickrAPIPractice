@@ -113,6 +113,7 @@ extension ResultViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         cell.collectCallBack = {
             self.favoritesPhotosArray.append(self.photosArray[indexPath.row])
+            self.viewModel.collectPhoto(photo: self.photosArray[indexPath.row])
         }
         return cell
     }
@@ -131,7 +132,8 @@ extension ResultViewController: UITabBarDelegate {
             self.photosArray = self.searchPhotosArray
             self.navigationItem.title = "搜尋結果 \(self.text!)"
         case 1:
-            self.photosArray = self.favoritesPhotosArray
+            self.photosArray = self.viewModel.queryCollectPhoto()
+//            self.photosArray = self.favoritesPhotosArray
             self.navigationItem.title = "我的最愛"
         default:
             break
